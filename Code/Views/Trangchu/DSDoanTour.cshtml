@@ -1,0 +1,11 @@
+﻿@model IEnumerable<DULICH.Models.DSDoanTour>
+<h1>Thống kê doanh thu Tour</h1>
+<div>Chọn tour:</div>
+@if (ViewBag.tourslist != null)
+{
+    @Html.DropDownList("tour_ten" ,(IEnumerable<SelectListItem>)ViewBag.tourslist, new { @class = "form-control" })
+}
+<div>Chọn đoàn:</div>
+    @Html.DropDownList("doan_ten", (IEnumerable<SelectListItem>)ViewBag.tourslist, new { @class = "form-control" })
+
+

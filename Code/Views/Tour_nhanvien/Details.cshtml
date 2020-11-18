@@ -1,0 +1,48 @@
+﻿@model DULICH.Models.Tour_nhanvien
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Tour_nhanvien</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nv_ten)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nv_ten)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nv_sdt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nv_sdt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nv_ngaysinh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nv_ngaysinh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nv_email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nv_email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nv_nhiemvu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nv_nhiemvu)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.nv_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

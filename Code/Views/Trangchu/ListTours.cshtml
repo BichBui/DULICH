@@ -1,0 +1,63 @@
+﻿@model IEnumerable<DULICH.Models.ListTours>
+
+@{
+    ViewData["Title"] = "ListTours";
+}
+
+<h1>ListTours</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Tên Tour
+            </th>
+            <th>
+                Mô tả
+            </th>
+            <th>
+                Loại Tour
+            </th>
+
+            <th>
+                Danh sách địa điểm
+            </th>
+            <th>
+                Giá Tour
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tour_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tour_ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tour_mota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.loai_ten)
+            </td>
+            <td>
+                <a asp-area="" asp-controller="Trangchu" asp-action="ChitietTour" asp-route-id="@item.tour_id">Xem địa điểm</a>
+            </td>
+            <td>
+                <a asp-area="" asp-controller="Tour_gia" asp-action="Details" asp-route-id="@item.gia_id">Xem giá</a>
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-area="" asp-controller="Trangchu" asp-action="Index">Quay lại</a>
+</div>

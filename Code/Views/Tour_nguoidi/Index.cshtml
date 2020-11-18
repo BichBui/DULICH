@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DULICH.Models.Tour_nguoidi>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.doan_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nguoidi_dsnhanvien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nguoidi_dskhach)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.doan_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nguoidi_dsnhanvien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nguoidi_dskhach)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.nguoidi_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.nguoidi_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.nguoidi_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

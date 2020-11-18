@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DULICH.Models.ChitietTour>
+
+
+<h1>Danh sách địa điểm</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                Địa điểm
+            </th>
+            <th>
+                Mô tả
+            </th>
+            <th>
+                Thứ tự
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.diadiem_ten)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.diadiem_mota)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.diadiem_tt)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-area="" asp-controller="Trangchu" asp-action="ListTours">Quay lại</a>
+</div>
+

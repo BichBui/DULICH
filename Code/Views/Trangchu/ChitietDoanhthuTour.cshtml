@@ -1,0 +1,71 @@
+﻿@using Newtonsoft.Json;
+@model IEnumerable<DULICH.Models.ChitietDoanhthu>
+
+@{
+    ViewData["Title"] = "ChitietDoanhthu";
+}
+
+<h1>Thống kê doanh thu Tour</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Đoàn đi
+            </th>
+            <th>
+                Số khách
+            </th>
+            <th>
+                Giá Tour
+            </th>
+            <th>
+                Doanh thu
+            </th>
+            <th>
+                Tổng chi phí
+            </th>
+            <th>
+                Lãi
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.doan_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.doan_ten)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sokhach)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.giatour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.doanhthu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.chiphi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.lai)
+                </td>
+
+            </tr>
+        }
+    
+
+    </tbody>
+</table>
+
+

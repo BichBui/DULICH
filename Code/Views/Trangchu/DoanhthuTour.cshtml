@@ -1,0 +1,72 @@
+﻿@using Newtonsoft.Json;
+@model IEnumerable<DULICH.Models.DoanhthuTour>
+
+@{
+    ViewData["Title"] = "ListTours";
+}
+
+<h1>Thống kê doanh thu Tour</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Tên Tour
+            </th>
+            <th>
+
+            </th>
+            <th>
+                Tổng số đoàn đi
+            </th>
+            <th>
+                Tổng doanh thu
+            </th>
+            <th>
+                Tổng chi phí
+            </th>
+            <th>
+                Lãi
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tour_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tour_ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.list)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tong_doan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tong_doanhthu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tong_chiphi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lai)
+            </td>
+            <td>
+                <a asp-area="" asp-controller="Trangchu" asp-action="ChitietDoanhthuTour" asp-route-id="@item.tour_id">Chi tiết</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

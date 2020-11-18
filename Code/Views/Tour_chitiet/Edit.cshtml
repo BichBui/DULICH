@@ -1,0 +1,44 @@
+﻿@model DULICH.Models.Tour_chitiet
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Tour_chitiet</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ct_id" />
+            <div class="form-group">
+                <label asp-for="tour_id" class="control-label"></label>
+                <input asp-for="tour_id" class="form-control" />
+                <span asp-validation-for="tour_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dd_id" class="control-label"></label>
+                <input asp-for="dd_id" class="form-control" />
+                <span asp-validation-for="dd_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ct_thutu" class="control-label"></label>
+                <input asp-for="ct_thutu" class="form-control" />
+                <span asp-validation-for="ct_thutu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
